@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- saved from url=(0288)https://umyvjhcr.labs.coursera.org/webview/index.html?id=db578e2e-d567-4b59-ba6f-ceb1eac55532&swVersion=2&extensionId=vscode.markdown-language-features&platform=browser&vscode-resource-base-authority=vscode-resource.vscode-webview.net&parentOrigin=https%3A%2F%2Fumyvjhcr.labs.coursera.org -->
+<html lang="en" style="width: 100%; height: 100%;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+
+	<!-- Disable pinch zooming -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Virtual Document</title>
+</head>
+
+<body style="margin: 0; overflow: hidden; width: 100%; height: 100%" role="document">
+	<script async="" type="module" src="./main.js(2).download"></script>
+<script>
+    const coursera_getParentTargetDomain = function() {
+      if (location.ancestorOrigins && location.ancestorOrigins[0]) {
+        return location.ancestorOrigins[0];
+      }
+      return "https://www.coursera.org";
+    };
+    </script>
+<script>
+    if (window.parent !== window) {
+      (function() {
+        var historyWrapper = function(functionType) {
+          var whichFunc = history[functionType];
+          return function() {
+            var response = whichFunc.apply(this, arguments);
+            var eventRes = new Event(functionType);
+            eventRes.arguments = arguments;
+            window.dispatchEvent(eventRes);
+            return response;
+          };
+        };
+        history.pushState = historyWrapper("pushState");
+        history.replaceState = historyWrapper("replaceState");
+        const sendInnerFrameUrl = function() {
+          window.parent.postMessage({'innerFrameUrl': window.location.href, 'fromInnerFrame': true}, coursera_getParentTargetDomain());
+        };
+        window.addEventListener("pushState",    sendInnerFrameUrl);
+        window.addEventListener("replaceState", sendInnerFrameUrl);
+        window.addEventListener("popstate",     sendInnerFrameUrl);
+        window.addEventListener("hashchange",   sendInnerFrameUrl);
+      })();
+    }
+    </script>
+<script>
+    if (window.parent !== window) {
+      window.parent.postMessage({'innerFrameUrl': window.location.href, 'fromInnerFrame': true}, coursera_getParentTargetDomain());
+    }
+    </script>
+<script>
+    if (window.parent !== window) {
+      (function() {
+        function throttle(callback, limit) {
+          var waiting = false;                      // Initially, we're not waiting
+          return function () {                      // We return a throttled function
+            if (!waiting) {                         // If we're not waiting
+              callback.apply(this, arguments);      // Execute users function
+              waiting = true;                       // Prevent future invocations
+              setTimeout(function () {              // After a period of time
+                  waiting = false;                  // And allow future invocations
+              }, limit);
+            }
+          }
+        }
+
+        const notify = () => {
+          window.parent.postMessage({'isActive': true, 'fromInnerFrame': true}, coursera_getParentTargetDomain());
+        };
+
+        const throttledNotify = throttle(notify, 10000);
+      
+        window.addEventListener('keydown', throttledNotify);
+        window.addEventListener('mousemove', throttledNotify);
+        window.addEventListener('click', throttledNotify);
+      })();
+    }
+    </script>
+
+
+<iframe id="active-frame" frameborder="0" sandbox="allow-scripts allow-forms allow-same-origin allow-pointer-lock allow-downloads" allow="clipboard-read; clipboard-write;" src="./fake(1).html" style="display: block; margin: 0px; overflow: hidden; position: absolute; width: 100%; height: 100%; visibility: visible;"></iframe></body></html>
